@@ -7,7 +7,7 @@ import { Button } from 'antd'
 export default class Page404 extends Component {
   render() {
     return (
-      <div className="404-page">
+      <div>
         <div>404 Page</div>
         <Link to="/"><Button>返回首页</Button></Link>
       </div>

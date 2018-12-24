@@ -7,7 +7,7 @@ import { Button } from 'antd'
 export default class Home extends Component {
   render() {
     return (
-      <div className="default-page home-page">
+      <div>
         <div>控制台首页</div>
         <Link to="/secure/settings"><Button>设置</Button></Link>
       </div>
