@@ -4,12 +4,12 @@ import { Link } from 'dva/router';
 import { Button } from 'antd'
 
 @connect()
-export default class Home extends Component {
+export default class Page404 extends Component {
   render() {
     return (
-      <div className="default-page home-page">
-        <div>控制台首页</div>
-        <Link to="/secure/settings"><Button>设置</Button></Link>
+      <div className="404-page">
+        <div>404 Page</div>
+        <Link to="/"><Button>返回首页</Button></Link>
       </div>
     )
   }
