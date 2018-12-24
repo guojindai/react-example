@@ -2,7 +2,7 @@
  * 登录后控制台默认页面结构
  */
 
-import React, { Component, Children } from 'react';
+import React, { Component } from 'react';
 import { Layout, Icon } from 'antd';
 import styles from './SecureDefault.less';
 
