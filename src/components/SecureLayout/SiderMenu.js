@@ -25,22 +25,28 @@ export default class SilderMenu extends Component {
     this.setState({ openKeys: openKeys });
   }
   render() {
-    const { routing: { location } } = this.props;
+    const { routing: { location }, collapsed } = this.props;
     const pathname = location && location.pathname;
-    const openKeys = this.state.openKeys.slice();
     const selectedKeys = [];
+    const menuOtherProps = {};
     if (pathname) {
-      const openKey = pathname.substring(0, pathname.lastIndexOf('/'));
-      if (!openKeys.some(key => openKey === key)) {
-        openKeys.push(openKey);
+      if (!collapsed) {
+        const openKeys = this.state.openKeys.slice();
+        const openKey = pathname.substring(0, pathname.lastIndexOf('/'));
+        if (!openKeys.some(key => openKey === key)) {
+          openKeys.push(openKey);
+        }
+        menuOtherProps.openKeys = openKeys;
       }
       selectedKeys.push(pathname);
     }
     return (
-      <Sider className={styles.sider} >
+      <Sider className={styles.sider} collapsed={collapsed} >
         <div className={styles.logo}>
           <Link to="/secure">
-            <h1>React Example</h1>
+            {
+              !collapsed && <h1>React Example</h1>
+            }
           </Link>
         </div>
         <Menu
@@ -48,8 +54,8 @@ export default class SilderMenu extends Component {
           theme="dark"
           onClick={this.handleClickItem}
           onOpenChange={this.handleOpenSubMenus}
-          openKeys={openKeys}
           selectedKeys={selectedKeys}
+          {...menuOtherProps}
         >
           <MenuItem key="/secure/home">
             <Icon type="home" />

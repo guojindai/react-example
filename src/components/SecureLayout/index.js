@@ -4,19 +4,27 @@
 
 import React, { Component } from 'react';
 import { Layout, Icon } from 'antd';
+import Header from './Header';
 import SiderMenu from './SiderMenu';
 import styles from './index.less';
 
-const { Header, Footer, Content } = Layout;
+const { Footer, Content } = Layout;
 
 export default class SecureLayout extends Component {
+  state = {
+    collapsed: false,
+  }
+  handleCollapseChange = (collapsed) => {
+    this.setState({ collapsed });
+  }
   render() {
     const { children } = this.props;
+    const { collapsed } = this.state;
     return (
       <Layout className={styles.main}>
-        <SiderMenu />
+        <SiderMenu collapsed={collapsed} />
         <Layout>
-          <Header>Header</Header>
+          <Header collapsed={collapsed} onCollapse={this.handleCollapseChange} />
           <Content className={styles.content}>{children}</Content>
           <Footer className={styles.footer}>
             <div className={styles.copyright}>
