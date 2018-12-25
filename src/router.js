@@ -1,3 +1,7 @@
+/**
+ * 路由
+ */
+
 import React from 'react';
 import { routerRedux, Route, Switch, Redirect } from 'dva/router';
 import { AuthorizedRoute } from './components/Authorized';

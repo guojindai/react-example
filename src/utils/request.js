@@ -1,3 +1,7 @@
+/**
+ * 包装了 fetch
+ */
+
 import fetch from 'dva/fetch';
 
 const DEFAULT_OPTIONS = {

@@ -1,3 +1,7 @@
+/**
+ * 控制台首页
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import PageLinkGroup from '../../../components/PageLinkGroup';

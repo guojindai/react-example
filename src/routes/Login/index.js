@@ -1,5 +1,5 @@
 /**
- * 用户登录页面
+ * 用户登录
  */
 
 import React, { Component } from 'react';

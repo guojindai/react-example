@@ -1,3 +1,7 @@
+/**
+ * app 初始化
+ */
+
 import dva from 'dva';
 import createHistory from 'history/createBrowserHistory';
 import createLoading from 'dva-loading';

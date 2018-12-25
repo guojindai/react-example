@@ -1,3 +1,7 @@
+/**
+ * 权限控制组件
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { Route, Redirect } from 'dva/router';

@@ -1,3 +1,7 @@
+/**
+ * 404 页面
+ */
+
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
