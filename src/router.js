@@ -1,36 +1,46 @@
 import React from 'react';
-import { Router, Route, Switch, Redirect } from 'dva/router';
+import { routerRedux, Route, Switch, Redirect } from 'dva/router';
 import { AuthorizedRoute } from './components/Authorized';
-import SecureDefaultLayout from './components/Layout/SecureDefault';
+import SecureLayout from './components/SecureLayout';
 import Login from './routes/Login';
 import Index from './routes/Index';
 import Page404 from './routes/Error/Page404';
 import SecureHome from './routes/Secure/Home';
 import SecureSettings from './routes/Secure/Settings';
+import SecureContractSearch from './routes/Secure/ContractSearch';
+import SecureContractDeploy from './routes/Secure/ContractDeploy';
+import SecureUserSearch from './routes/Secure/UserSearch';
+import SecureUserAuth from './routes/Secure/UserAuth';
+
+const { ConnectedRouter } = routerRedux;
 
 function SecureRoutes({ match }) {
   return (
-    <SecureDefaultLayout>
+    <SecureLayout>
       <Switch>
         <Redirect from={`${match.url}/`} to={`${match.url}/home`} exact />
         <AuthorizedRoute path={`${match.url}/home`} authority={['USER']} component={SecureHome} exact />
         <AuthorizedRoute path={`${match.url}/settings`} component={SecureSettings} exact />
+        <AuthorizedRoute path={`${match.url}/contract/search`} component={SecureContractSearch} exact />
+        <AuthorizedRoute path={`${match.url}/contract/deploy`} component={SecureContractDeploy} exact />
+        <AuthorizedRoute path={`${match.url}/user/search`} component={SecureUserSearch} exact />
+        <AuthorizedRoute path={`${match.url}/user/auth`} component={SecureUserAuth} exact />
         <Route component={Page404} />
       </Switch>
-    </SecureDefaultLayout>
+    </SecureLayout>
   )
 }
 
 function RouterConfig({ history }) {
   return (
-    <Router history={history}>
+    <ConnectedRouter history={history}>
       <Switch>
         <Route path="/" component={Index} exact />
         <Route path="/login" component={Login} exact />
         <Route path="/secure" component={SecureRoutes} />
         <Route component={Page404} />
       </Switch>
-    </Router>
+    </ConnectedRouter>
   );
 }
 

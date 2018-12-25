@@ -4,22 +4,23 @@
 
 import React, { Component } from 'react';
 import { Layout, Icon } from 'antd';
-import styles from './SecureDefault.less';
+import SiderMenu from './SiderMenu';
+import styles from './index.less';
 
-const { Header, Footer, Sider, Content } = Layout;
+const { Header, Footer, Content } = Layout;
 
-export default class SecureDefault extends Component {
+export default class SecureLayout extends Component {
   render() {
     const { children } = this.props;
     return (
       <Layout className={styles.main}>
-        <Sider>Sider</Sider>
+        <SiderMenu />
         <Layout>
           <Header>Header</Header>
-          <Content>{children}</Content>
+          <Content className={styles.content}>{children}</Content>
           <Footer className={styles.footer}>
             <div className={styles.copyright}>
-              Copyright <Icon type="copyright" /> 2018 中钞区块链技术研究院
+              Copyright <Icon type="copyright" /> 2018 React Example 团伙
             </div>
           </Footer>
         </Layout>
