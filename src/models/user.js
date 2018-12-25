@@ -3,7 +3,7 @@
  */
 
 import { routerRedux } from 'dva/router';
-import { login } from '../services/user';
+import { login, logout } from '../services/user';
 
 const authority = sessionStorage.getItem('REACT_EXAMPLE_AUTHORITY');
 
@@ -25,6 +25,12 @@ export default {
         sessionStorage.setItem('REACT_EXAMPLE_AUTHORITY', authority);
         yield put(routerRedux.replace('/secure'));
       }
+    },
+    *logout(_, { call, put }) {
+      yield call(logout);
+      yield put({ type: 'setAuthority', payload: { authority: [] } });
+      sessionStorage.removeItem('REACT_EXAMPLE_AUTHORITY');
+      yield put(routerRedux.push('/'));
     },
   },
   reducers: {

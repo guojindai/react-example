@@ -10,3 +10,7 @@ export const login = (params) => {
     body: params,
   });
 };
+
+export const logout = () => {
+  return request('/api/logout');
+}

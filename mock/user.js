@@ -30,6 +30,12 @@ const api = {
       });
     }
   },
+  'GET /api/logout': (req, res) => {
+    res.send({
+      code: 'SUCCESS',
+      data: undefined,
+    });
+  },
 }
 
 export default delay(api, 1000);

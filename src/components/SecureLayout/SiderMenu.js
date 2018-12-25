@@ -61,7 +61,7 @@ export default class SilderMenu extends Component {
             <Icon type="home" />
             <span>首页</span>
           </MenuItem>
-          <SubMenu key="/secure/contract" title={<span><Icon type="setting" /><span>合约管理</span></span>}>
+          <SubMenu key="/secure/contract" title={<span><Icon type="paper-clip" /><span>合约管理</span></span>}>
             <MenuItem key="/secure/contract/search">合约查询</MenuItem>
             <MenuItem key="/secure/contract/deploy">合约部署</MenuItem>
           </SubMenu>

@@ -23,12 +23,12 @@ function SecureRoutes({ match }) {
     <SecureLayout>
       <Switch>
         <Redirect from={`${match.url}/`} to={`${match.url}/home`} exact />
-        <AuthorizedRoute path={`${match.url}/home`} authority={['USER']} component={SecureHome} exact />
-        <AuthorizedRoute path={`${match.url}/settings`} component={SecureSettings} exact />
-        <AuthorizedRoute path={`${match.url}/contract/search`} component={SecureContractSearch} exact />
-        <AuthorizedRoute path={`${match.url}/contract/deploy`} component={SecureContractDeploy} exact />
-        <AuthorizedRoute path={`${match.url}/user/search`} component={SecureUserSearch} exact />
-        <AuthorizedRoute path={`${match.url}/user/auth`} component={SecureUserAuth} exact />
+        <AuthorizedRoute path={`${match.url}/home`} component={SecureHome} authority={['USER']} exact />
+        <AuthorizedRoute path={`${match.url}/settings`} component={SecureSettings} authority={['USER']} exact />
+        <AuthorizedRoute path={`${match.url}/contract/search`} component={SecureContractSearch} authority={['USER']} exact />
+        <AuthorizedRoute path={`${match.url}/contract/deploy`} component={SecureContractDeploy} authority={['USER']} exact />
+        <AuthorizedRoute path={`${match.url}/user/search`} component={SecureUserSearch} authority={['USER']} exact />
+        <AuthorizedRoute path={`${match.url}/user/auth`} component={SecureUserAuth} authority={['USER']} exact />
         <Route component={Page404} />
       </Switch>
     </SecureLayout>
