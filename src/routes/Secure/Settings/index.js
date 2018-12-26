@@ -5,18 +5,17 @@
 import React, { Component } from 'react';
 import { connect } from 'dva';
 import PageLinkGroup from '../../../components/PageLinkGroup';
-import Page from '../../../components/SecureLayout/Page';
+import HeaderPage from '../../../components/SecureLayout/HeaderPage';
 
 @connect()
 export default class Settings extends Component {
   render() {
     return (
-      <Page>
+      <HeaderPage title="设置" desc="这是一个设置页面...">
         <div>
-          <h1>设置</h1>
           <PageLinkGroup />
         </div>
-      </Page>
+      </HeaderPage>
     )
   }
 }
