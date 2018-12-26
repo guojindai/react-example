@@ -2,7 +2,7 @@
  * 控制台首页
  */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { Button } from 'antd';
 import PageLinkGroup from '../../../components/PageLinkGroup';
@@ -10,7 +10,7 @@ import request from '../../../utils/request';
 import Page from '../../../components/SecureLayout/Page';
 
 @connect()
-export default class Home extends Component {
+export default class Home extends PureComponent {
   handleRequestError = (api) => {
     request(api)
       .catch((e) => {

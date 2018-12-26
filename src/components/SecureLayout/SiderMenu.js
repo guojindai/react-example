@@ -2,7 +2,7 @@
  * 左侧菜单栏
  */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { routerRedux, Link } from 'dva/router';
 import { Layout, Menu, Icon } from 'antd';
@@ -12,7 +12,7 @@ const { Sider } = Layout;
 const { SubMenu, Item: MenuItem } = Menu;
 
 @connect(({ routing }) => ({ routing }))
-export default class SilderMenu extends Component {
+export default class SilderMenu extends PureComponent {
   state = {
     openKeys: [],
   }

@@ -6,7 +6,7 @@ import React from 'react';
 import { Link } from 'dva/router';
 import { Button } from 'antd'
 
-export default () => {
+export default React.memo(() => {
   return (
     <div>
       <Link to="/secure"><Button  ghost type="primary">控制台首页</Button></Link>
@@ -17,4 +17,4 @@ export default () => {
       <Link to="/secure/settings"><Button  ghost type="primary">设置</Button></Link>
     </div>
   )
-}
+})

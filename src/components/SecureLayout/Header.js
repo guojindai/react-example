@@ -2,7 +2,7 @@
  * 顶部 Header
  */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { routerRedux } from 'dva/router';
 import { Layout, Icon, Tooltip, Dropdown, Menu, Avatar } from 'antd';
@@ -11,7 +11,7 @@ import styles from './Header.less';
 const { Item: MenuItem } = Menu;
 
 @connect()
-export default class Header extends Component {
+export default class Header extends PureComponent {
   handleToggleCollapse = () => {
     const { collapsed, onCollapse } = this.props;
     onCollapse(!collapsed);

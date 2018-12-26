@@ -2,7 +2,7 @@
  * 权限控制组件
  */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { Route, Redirect } from 'dva/router';
 
@@ -39,7 +39,7 @@ const checkPermissions = (authority, currentAuthority, target, Exception) => {
 };
 
 @connect(({ user }) => ({ user }))
-class Authorized extends Component {
+class Authorized extends PureComponent {
   render() {
     const { children, authority, noMatch = null, user } = this.props;
     return checkPermissions(authority, user.authority, children, noMatch);

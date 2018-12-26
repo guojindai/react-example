@@ -2,7 +2,7 @@
  * 登录后控制台默认页面结构
  */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { Layout, Icon } from 'antd';
 import Header from './Header';
 import SiderMenu from './SiderMenu';
@@ -10,7 +10,7 @@ import styles from './index.less';
 
 const { Footer, Content } = Layout;
 
-export default class SecureLayout extends Component {
+export default class SecureLayout extends PureComponent {
   state = {
     collapsed: false,
   }

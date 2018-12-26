@@ -2,14 +2,14 @@
  * 首页
  */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { Link } from 'dva/router';
 import { Button } from 'antd';
 import styles from './index.less';
 
 @connect()
-export default class Index extends Component {
+export default class Index extends PureComponent {
   render() {
     return (
       <div className={styles.page}>

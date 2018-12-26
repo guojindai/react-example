@@ -2,13 +2,13 @@
  * 用户登录
  */
 
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { connect } from 'dva';
 import { Button, Form, Input, Icon, Alert } from 'antd';
 import styles from './index.less';
 
 @connect(({ user, loading }) => ({ user, loading }))
-class Login extends Component {
+class Login extends PureComponent {
   componentWillUnmount() {
     this.props.dispatch({
       type: 'user/resetLoginStatus',
