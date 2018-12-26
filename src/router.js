@@ -14,6 +14,7 @@ import SecureSettings from './routes/Secure/Settings';
 import SecureContractSearch from './routes/Secure/ContractSearch';
 import SecureContractDeploy from './routes/Secure/ContractDeploy';
 import SecureUserSearch from './routes/Secure/UserSearch';
+import SecureUserDetail from './routes/Secure/UserSearch/Detail';
 import SecureUserAuth from './routes/Secure/UserAuth';
 
 const { ConnectedRouter } = routerRedux;
@@ -28,6 +29,7 @@ function SecureRoutes({ match }) {
         <AuthorizedRoute path={`${match.url}/contract/search`} component={SecureContractSearch} authority={['USER']} exact />
         <AuthorizedRoute path={`${match.url}/contract/deploy`} component={SecureContractDeploy} authority={['USER']} exact />
         <AuthorizedRoute path={`${match.url}/user/search`} component={SecureUserSearch} authority={['USER']} exact />
+        <AuthorizedRoute path={`${match.url}/user/search/detail`} component={SecureUserDetail} authority={['USER']} exact />
         <AuthorizedRoute path={`${match.url}/user/auth`} component={SecureUserAuth} authority={['USER']} exact />
         <Route component={Page404} />
       </Switch>
