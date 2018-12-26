@@ -25,7 +25,7 @@ export default class SecureLayout extends Component {
         <SiderMenu collapsed={collapsed} />
         <Layout>
           <Header collapsed={collapsed} onCollapse={this.handleCollapseChange} />
-          <Content className={styles.content}>{children}</Content>
+          <Content>{children}</Content>
           <Footer className={styles.footer}>
             <div className={styles.copyright}>
               Copyright <Icon type="copyright" /> 2018 React Example 团伙
