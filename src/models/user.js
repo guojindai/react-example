@@ -40,7 +40,7 @@ export default {
         authority,
       };
     },
-    setLoginStatus(state, { payload: {  status } }) {
+    setLoginStatus(state, { payload: { status } }) {
       return {
         ...state,
         loginStatus: status,

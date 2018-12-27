@@ -1,3 +1,10 @@
 {
-  "extends": "umi"
+  "extends": "umi",
+  "rules": {
+    "indent": ["error", 2],
+    "no-multi-spaces": ["error"],
+    "no-mixed-spaces-and-tabs": ["error"],
+    "space-before-blocks": ["error"],
+    "space-infix-ops": ["error"]
+  }
 }
