@@ -8,7 +8,9 @@
  * Example: /a/b => /a, /a => /, / => /
  */
 export const cutPath = (path) => {
-  if (path === '/') {
+  if (!path) {
+    return path;
+  } else if (path=== '/') {
     return path;
   } else {
     const newPath = path.substring(0, path.lastIndexOf('/'));

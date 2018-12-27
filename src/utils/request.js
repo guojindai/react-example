@@ -2,7 +2,7 @@
  * 包装了 fetch
  */
 
-import fetch from 'dva/fetch';
+import 'dva/fetch';
 import { message } from 'antd';
 
 const CODE_REQUEST_MESSAGE = {
@@ -73,14 +73,13 @@ const checkBody = ({ data, response }) => {
   } else {
     // 返回的 body 不符合格式要求
     alertError(`请求返回数据格式错误, ${response.url}`);
-    throw newError('请求返回数据错误', data, response);
+    throw newError('请求返回数据错误', JSON.stringify(data), response);
   }
 };
 
 const alertError = (msg) => {
   message.error(msg);
 }
-
 
 export default (url, options) => {
   const newOptions = { ...DEFAULT_OPTIONS, ...options };
