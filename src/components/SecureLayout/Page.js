@@ -1,3 +1,7 @@
+/**
+ * 普通的页
+ */
+
 import React from 'react';
 import styles from './Page.less';
 

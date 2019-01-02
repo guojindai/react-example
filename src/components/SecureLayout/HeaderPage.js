@@ -1,3 +1,7 @@
+/**
+ * 附带 header 的页
+ */
+
 import React from 'react';
 import styles from './HeaderPage.less';
 
